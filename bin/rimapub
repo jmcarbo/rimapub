@@ -1,0 +1,58 @@
+#! /usr/bin/ruby
+$LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__) + "/../lib"))
+
+require 'rubygems'
+require 'rimapub'
+require 'getoptions'
+require 'pp'
+
+COMMAND_LIST = ['publish', 'setup' ]
+opt = GetOptions.new(%w( help set=s command=s description=s images=@s x! tags=s Title=s Date=s))
+
+if opt['help'] 
+	puts "Usage: rimapub -c <#{COMMAND_LIST.join(', ')}> -s <image set> -d <image description> -t <tags comma separated and quoted> -i <image list or glob> "
+	puts "                 -T <image title>"
+	puts "       rimapub -h"
+	exit 0
+end
+
+set  = opt['set'] || "default"
+command = opt['command'] || "publish"
+description = opt['description'] || ""
+images = opt['images'] || "*"
+verbose = opt['x'] || false
+tags = opt['tags'] || ""
+title = opt['Title'] || ""
+date = opt['Date'] || Time.now.strftime("%Y-%m-%d")
+
+
+#begin
+if COMMAND_LIST.include? command 
+	puts "Executing command #{command}" if verbose
+	case command
+		when 'publish':
+			
+			images.each do |f|
+				f = File.expand_path(f)
+
+				Dir.glob(f) do |f2|					
+					if(!File.directory? f2)
+						if File.exists?(f2)
+							puts "Publishing #{f2} in set #{set} with title #{title}" if verbose
+							aPublisher = Rimapub::Rimapub.new(verbose)
+							aPublisher.publish(f2, set, title, description, tags)
+						else
+							puts "File #{f2} does not exist."
+						end
+					else
+						puts "Directory of images not supported"
+					end
+				end
+			end
+		else
+			puts "Unsupported command"
+		end
+end
+# rescue
+# 	puts "An error has occured #{$!}" 
+# end
