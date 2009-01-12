@@ -14,7 +14,9 @@
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  rimapub -c <publish, setup> -s <image set> -d <image description> -t <tags comma separated and quoted> 
+          -D <publish date YY-MM-DD> -T <image title> -i <image list or glob> 
+                  
 
 == REQUIREMENTS:
 
@@ -22,7 +24,7 @@
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install jmcarbo-rimapub
 
 == LICENSE:
 

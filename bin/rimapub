@@ -11,7 +11,7 @@ opt = GetOptions.new(%w( help set=s command=s description=s images=@s x! tags=s 
 
 if opt['help'] 
 	puts "Usage: rimapub -c <#{COMMAND_LIST.join(', ')}> -s <image set> -d <image description> -t <tags comma separated and quoted> -i <image list or glob> "
-	puts "                 -T <image title>"
+	puts "                -D <publish date YY-MM-DD> -T <image title>"
 	puts "       rimapub -h"
 	exit 0
 end

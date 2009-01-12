@@ -6,6 +6,8 @@ Rakefile
 config/website.yml.sample
 lib/rimapub.rb
 lib/rimapub/rimapub.rb
+lib/rimapub/rimapub_service.rb
+lib/rimapub/rimapub_set.rb
 script/console
 script/destroy
 script/generate

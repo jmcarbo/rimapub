@@ -2,4 +2,3 @@
 *.o
 *.so
 .DS_Store
-pkg
