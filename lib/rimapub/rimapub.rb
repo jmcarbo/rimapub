@@ -17,6 +17,18 @@ services:
         auth_type: plain
         source_address: user@gmail.com
         destination_address: user@gmail.com
+
+   shutterchance:
+        type: shutterchance
+        login_url: http://user.shutterchance.com
+        user: usero@email
+        password: password
+
+    aminus3:
+        type: aminus3
+        login_url: http://user.aminus3.com/admin/signin/
+        user: user@email
+        password: password
 sets:
     default: gmail, pepet
 END

@@ -1,3 +1,9 @@
+== 0.0.2 2009-01-17
+
+* added support for aminus3 and shutterchance
+* solved an annoying bug with uninitialized constant RI::Paths. Had to include 
+  require 'rdoc/ri/ri_display' before getoptions.
+  
 == 0.0.1 2009-01-11
 
 * 1 major enhancement:

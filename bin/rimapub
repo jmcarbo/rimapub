@@ -3,6 +3,7 @@ $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__) + "/../lib"))
 
 require 'rubygems'
 require 'rimapub'
+require 'rdoc/ri/ri_paths'
 require 'getoptions'
 require 'pp'
 
