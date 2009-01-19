@@ -6,5 +6,5 @@ require 'rimapub/rimapub_service.rb'
 require 'rimapub/rimapub_set.rb'
 
 module Rimapub
-  VERSION = '0.0.2'
+  VERSION = '0.0.3'
 end

@@ -3,6 +3,7 @@ Manifest.txt
 PostInstall.txt
 README.rdoc
 Rakefile
+bin/rimapub
 config/website.yml.sample
 lib/rimapub.rb
 lib/rimapub/rimapub.rb
